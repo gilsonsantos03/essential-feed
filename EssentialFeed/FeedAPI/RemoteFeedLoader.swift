@@ -24,11 +24,7 @@ public final class RemoteFeedLoader {
             switch result {
             //or case .success(let data, let response):
             case let .success(data, response):
-                if let items = try? FeedItemsMapper.map(data, response) {
-                    return completion(.success(items))
-                } else {
-                    return completion(.failure(.invalidData))
-                }
+                completion(FeedItemsMapper.map(data, from: response))
             case .failfure:
                 completion(.failure(.connectivity))
             }
