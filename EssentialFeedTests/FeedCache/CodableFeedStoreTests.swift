@@ -1,7 +1,7 @@
 import EssentialFeed
 import XCTest
 
-class CodableFeedStoreTests: XCTestCase {
+class CodableFeedStoreTests: XCTestCase, FailableFeedStore {
     
     // we need to do that because we need to clean the disk every time we run the tests
     // without this we will have side-effects
