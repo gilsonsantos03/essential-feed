@@ -7,17 +7,27 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Table View Controller-->
+        <!--My Feed-->
         <scene sceneID="DQn-27-Bn4">
             <objects>
-                <tableViewController id="0aw-Ic-1qU" sceneMemberID="viewController">
+                <tableViewController id="0aw-Ic-1qU" customClass="FeedViewController" customModule="Prototype" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="EVd-A6-Ewh">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="sl5-31-vih">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="16"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        </view>
+                        <view key="tableFooterView" contentMode="scaleToFill" id="lKP-zx-xAP">
+                            <rect key="frame" x="0.0" y="663" width="414" height="16"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="FeedImageCell" rowHeight="580" id="Nnm-6k-0XF">
-                                <rect key="frame" x="0.0" y="44.5" width="414" height="580"/>
+                                <rect key="frame" x="0.0" y="60.5" width="414" height="580"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Nnm-6k-0XF" id="Og8-97-oz8">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="580"/>
@@ -77,7 +87,7 @@
                                                 </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9yS-E3-bLc" userLabel="Label Lbel AS A A A A A">
                                                     <rect key="frame" x="0.0" y="431" width="317.5" height="115"/>
-                                                    <mutableString key="text">Location, locarias oo oai soiaosioaiso ioais Location, locarias oo oai soiaosioaiso ioais Location, locarias oo oai soiaosioaiso ioais Location, locarias oo oai soiaosioaiso ioais Location, locarias oo oai soiaosioaiso ioais Location, locarias oo oai soiaosioaiso ioais Location, locarias oo oai soiaosioaiso ioais</mutableString>
+                                                    <string key="text">Location, locarias oo oai soiaosioaiso ioais Location, locarias oo oai soiaosioaiso ioais Location, locarias oo oai soiaosioaiso ioais Location, locarias oo oai soiaosioaiso ioais Location, locarias oo oai soiaosioaiso ioais Location, locarias oo oai soiaosioaiso ioais Location, locarias oo oai soiaosioaiso ioais</string>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <color key="textColor" red="0.29019607843137252" green="0.29019607843137252" blue="0.29019607843137252" alpha="0.68831432108976398" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -103,7 +113,7 @@
                             <outlet property="delegate" destination="0aw-Ic-1qU" id="U7Q-p5-PPG"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="8ni-zV-HN5"/>
+                    <navigationItem key="navigationItem" title="My Feed" id="8ni-zV-HN5"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e6q-F0-lnd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
