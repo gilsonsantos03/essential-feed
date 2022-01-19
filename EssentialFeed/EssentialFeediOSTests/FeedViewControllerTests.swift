@@ -20,60 +20,78 @@ final class FeedViewController: UITableViewController {
     }
     
     @objc private func load() {
-        loader?.load { _ in }
-    }
-}
-
-final class FeedViewControllerTests: XCTestCase {
-    
-    func test_init_doesNotLoadFeed() {
-        let (_, loader) = makeSUT()
-        
-        XCTAssertEqual(loader.loadCallCount, 0)
+        loader?.load { [weak self] _ in
+            self?.refreshControl?.endRefreshing()
+        }
     }
     
-    func test_viewDidLoad_loadsFeed() {
-        let (sut, loader) = makeSUT()
+    final class FeedViewControllerTests: XCTestCase {
         
-        sut.loadViewIfNeeded()
+        func test_init_doesNotLoadFeed() {
+            let (_, loader) = makeSUT()
+            
+            XCTAssertEqual(loader.loadCallCount, 0)
+        }
         
-        XCTAssertEqual(loader.loadCallCount, 1)
-    }
-    
-    func test_pullToRefresh_loadsFeed() {
-        let (sut, loader) = makeSUT()
-        sut.loadViewIfNeeded()
-
-        sut.refreshControl?.simulatePullToRefresh()
-        XCTAssertEqual(loader.loadCallCount, 2)
+        func test_viewDidLoad_loadsFeed() {
+            let (sut, loader) = makeSUT()
+            
+            sut.loadViewIfNeeded()
+            
+            XCTAssertEqual(loader.loadCallCount, 1)
+        }
         
-        sut.refreshControl?.simulatePullToRefresh()
-        XCTAssertEqual(loader.loadCallCount, 3)
-    }
-    
-    func test_viewDidLoad_showsLoadingIndicator() {
-        let (sut, _) = makeSUT()
+        func test_pullToRefresh_loadsFeed() {
+            let (sut, loader) = makeSUT()
+            sut.loadViewIfNeeded()
+            
+            sut.refreshControl?.simulatePullToRefresh()
+            XCTAssertEqual(loader.loadCallCount, 2)
+            
+            sut.refreshControl?.simulatePullToRefresh()
+            XCTAssertEqual(loader.loadCallCount, 3)
+        }
         
-        sut.loadViewIfNeeded()
+        func test_viewDidLoad_showsLoadingIndicator() {
+            let (sut, _) = makeSUT()
+            
+            sut.loadViewIfNeeded()
+            
+            XCTAssertEqual(sut.refreshControl?.isRefreshing, true)
+        }
         
-        XCTAssertEqual(sut.refreshControl?.isRefreshing, true)
-    }
-    
-    // MARK: - Helpers
-    
-    private func makeSUT(file: StaticString = #file, line: UInt = #line) -> (sut: FeedViewController, loader: LoaderSpy) {
-        let loader = LoaderSpy()
-        let sut = FeedViewController(loader: loader)
-        trackForMemoryLeaks(loader, file: file, line: line)
-        trackForMemoryLeaks(sut, file: file, line: line)
-        return (sut, loader)
-    }
-    
-    class LoaderSpy: FeedLoader {
-        private(set) var loadCallCount: Int = 0
+        func test_viewDidLoad_hidesLoadingIndicatorOnLoaderCompletion() {
+            let (sut, loader) = makeSUT()
+            
+            sut.loadViewIfNeeded()
+            loader.completeFeedLoading()
+            
+            XCTAssertEqual(sut.refreshControl?.isRefreshing, false)
+        }
         
-        func load(completion: @escaping (FeedLoader.Result) -> Void) {
-            loadCallCount += 1
+        // MARK: - Helpers
+        
+        private func makeSUT(file: StaticString = #file, line: UInt = #line) -> (sut: FeedViewController, loader: LoaderSpy) {
+            let loader = LoaderSpy()
+            let sut = FeedViewController(loader: loader)
+            trackForMemoryLeaks(loader, file: file, line: line)
+            trackForMemoryLeaks(sut, file: file, line: line)
+            return (sut, loader)
+        }
+        
+        class LoaderSpy: FeedLoader {
+            private var completions = [(FeedLoader.Result) -> Void]()
+            
+            var loadCallCount: Int {
+                return completions.count
+            }
+            
+            func load(completion: @escaping (FeedLoader.Result) -> Void) {            completions.append(completion)
+            }
+            
+            func completeFeedLoading() {
+                completions[0](.success([]))
+            }
         }
     }
 }
