@@ -134,6 +134,7 @@
 		4405A4F527A0449E00B15004 /* FeedViewControllerTests+Localization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FeedViewControllerTests+Localization.swift"; sourceTree = "<group>"; };
 		4405A4F827A045AE00B15004 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Feed.strings; sourceTree = "<group>"; };
 		4405A4FA27A0460200B15004 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Feed.strings"; sourceTree = "<group>"; };
+		4405A4FB27A0466200B15004 /* el */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = el; path = el.lproj/Feed.strings; sourceTree = "<group>"; };
 		440B65FD27374A1100A04359 /* EssentialFeed.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = EssentialFeed.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		440B660027374A1100A04359 /* EssentialFeed.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EssentialFeed.h; sourceTree = "<group>"; };
 		440B660127374A1200A04359 /* EssentialFeed.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = EssentialFeed.docc; sourceTree = "<group>"; };
@@ -698,6 +699,7 @@
 				en,
 				Base,
 				"pt-BR",
+				el,
 			);
 			mainGroup = 440B65F327374A1100A04359;
 			productRefGroup = 440B65FE27374A1100A04359 /* Products */;
@@ -901,6 +903,7 @@
 			children = (
 				4405A4F827A045AE00B15004 /* en */,
 				4405A4FA27A0460200B15004 /* pt-BR */,
+				4405A4FB27A0466200B15004 /* el */,
 			);
 			name = Feed.strings;
 			sourceTree = "<group>";
