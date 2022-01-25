@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4405A4F427A041CB00B15004 /* Feed.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4405A4F327A041CB00B15004 /* Feed.strings */; };
+		4405A4F627A0449E00B15004 /* FeedViewControllerTests+Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4405A4F527A0449E00B15004 /* FeedViewControllerTests+Localization.swift */; };
 		440B660227374A1200A04359 /* EssentialFeed.docc in Sources */ = {isa = PBXBuildFile; fileRef = 440B660127374A1200A04359 /* EssentialFeed.docc */; };
 		440B660827374A1200A04359 /* EssentialFeed.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 440B65FD27374A1100A04359 /* EssentialFeed.framework */; };
 		440B660E27374A1200A04359 /* EssentialFeed.h in Headers */ = {isa = PBXBuildFile; fileRef = 440B660027374A1100A04359 /* EssentialFeed.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -131,6 +132,7 @@
 
 /* Begin PBXFileReference section */
 		4405A4F327A041CB00B15004 /* Feed.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Feed.strings; sourceTree = "<group>"; };
+		4405A4F527A0449E00B15004 /* FeedViewControllerTests+Localization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FeedViewControllerTests+Localization.swift"; sourceTree = "<group>"; };
 		440B65FD27374A1100A04359 /* EssentialFeed.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = EssentialFeed.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		440B660027374A1100A04359 /* EssentialFeed.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EssentialFeed.h; sourceTree = "<group>"; };
 		440B660127374A1200A04359 /* EssentialFeed.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = EssentialFeed.docc; sourceTree = "<group>"; };
@@ -393,6 +395,7 @@
 				4428CF05279B37DA009F9E7B /* FeedViewController+TestHelpers.swift */,
 				4428CF07279B382B009F9E7B /* FeedViewControllerTests+Assertions.swift */,
 				4428CF09279B3884009F9E7B /* FeedViewControllerTests+LoaderSpy.swift */,
+				4405A4F527A0449E00B15004 /* FeedViewControllerTests+Localization.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -851,6 +854,7 @@
 				4428CF0D279B38EC009F9E7B /* UIButton+TestHelpers.swift in Sources */,
 				4428CF0A279B3884009F9E7B /* FeedViewControllerTests+LoaderSpy.swift in Sources */,
 				4428CEE7279852C3009F9E7B /* XCTestCase+MemoryLeakTracking.swift in Sources */,
+				4405A4F627A0449E00B15004 /* FeedViewControllerTests+Localization.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
