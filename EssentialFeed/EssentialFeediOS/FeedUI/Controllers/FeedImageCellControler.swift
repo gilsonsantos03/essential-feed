@@ -1,3 +1,4 @@
+import EssentialFeed
 import UIKit
 
 protocol FeedImageCellControllerDelegate {
