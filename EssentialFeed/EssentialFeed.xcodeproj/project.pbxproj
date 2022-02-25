@@ -1528,7 +1528,7 @@
 				44427ED927C4737500F9D0CB /* FeedStore2.xcdatamodel */,
 				443C7F882790A9CB004136B2 /* FeedStore.xcdatamodel */,
 			);
-			currentVersion = 443C7F882790A9CB004136B2 /* FeedStore.xcdatamodel */;
+			currentVersion = 44427ED927C4737500F9D0CB /* FeedStore2.xcdatamodel */;
 			path = FeedStore.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
