@@ -1,3 +1,4 @@
+import EssentialApp
 import EssentialFeed
 import EssentialFeediOS
 import UIKit
@@ -25,17 +26,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 //        let localImageLoader = LocalFeedImageDataLoader(store: localStore)
 //
 //        let feedViewController = FeedUIComposer.feedComposedWith(
-//            feedLoader: FeedLoaderWithFallbackComposite(
-//                primary: remoteFeedLoader,
-//                fallback: localFeedLoader
-//            ),
-//            imageLoader: FeedImageDataLoaderWithFallbackComposite(
-//                primary: localImageLoader,
-//                fallback: remoteImageLoader
-//            )
+//            feedLoader: localFeedLoader,
+//            imageLoader: localImageLoader
 //        )
 //
-//        window?.rootViewController = feedViewController
+//       window?.rootViewController = feedViewController
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
