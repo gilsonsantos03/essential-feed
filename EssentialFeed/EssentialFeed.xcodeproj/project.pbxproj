@@ -319,6 +319,7 @@
 		440B65FF27374A1100A04359 /* EssentialFeed */ = {
 			isa = PBXGroup;
 			children = (
+				44AA431428136DB3000D756D /* ImageCommentsAPI */,
 				44AA431028136CCA000D756D /* SharedAPI */,
 				44AA430F28136CAE000D756D /* SharedAPIInfra */,
 				44AA430C281364F1000D756D /* ImageCommentsFeature */,
@@ -335,6 +336,7 @@
 		440B660B27374A1200A04359 /* EssentialFeedTests */ = {
 			isa = PBXGroup;
 			children = (
+				44AA431528136DE5000D756D /* ImageCommentsAPI */,
 				44AA431228136D08000D756D /* SharedAPIHelpers */,
 				44AA431128136CE1000D756D /* SharedAPIInfra */,
 				443ADF0F27B4B646000C2F3D /* FeedPresentation */,
@@ -425,7 +427,6 @@
 			children = (
 				4433206C2739D74600991244 /* LoadFeedFromRemoteUseCaseTests.swift */,
 				446D7FCA27C0502500377094 /* LoadFeedImageDataFromRemoteUseCaseTests.swift */,
-				44AA4306281362C6000D756D /* LoadImageCommentsFromRemoteUseCaseTests.swift */,
 			);
 			path = FeedAPI;
 			sourceTree = "<group>";
@@ -437,8 +438,6 @@
 				4433206F2739E52800991244 /* RemoteFeedLoader.swift */,
 				442B0B63274071960022A3A9 /* FeedItemsMapper.swift */,
 				443C30842789C41C00B4B6C9 /* RemoteFeedItem.swift */,
-				44AA430828136319000D756D /* RemoteImageCommentsLoader.swift */,
-				44AA430A28136338000D756D /* ImageCommentsMapper.swift */,
 				446D7FCE27C076AB00377094 /* RemoteFeedImageDataLoader.swift */,
 			);
 			path = FeedAPI;
@@ -624,6 +623,23 @@
 				446D7FD627C07B5700377094 /* URLProtocolStub.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		44AA431428136DB3000D756D /* ImageCommentsAPI */ = {
+			isa = PBXGroup;
+			children = (
+				44AA430828136319000D756D /* RemoteImageCommentsLoader.swift */,
+				44AA430A28136338000D756D /* ImageCommentsMapper.swift */,
+			);
+			path = ImageCommentsAPI;
+			sourceTree = "<group>";
+		};
+		44AA431528136DE5000D756D /* ImageCommentsAPI */ = {
+			isa = PBXGroup;
+			children = (
+				44AA4306281362C6000D756D /* LoadImageCommentsFromRemoteUseCaseTests.swift */,
+			);
+			path = ImageCommentsAPI;
 			sourceTree = "<group>";
 		};
 		44E1F6CF2783378D00672A8B /* EssentialFeedAPIEndToEndTests */ = {
