@@ -47,6 +47,14 @@ class FeedPresenterTests: XCTestCase {
         ])
     }
     
+    func test_map_createsViewModel() {
+        let feed = uniqueImageFeed().models
+
+        let viewModel = FeedPresenter.map(feed)
+
+        XCTAssertEqual(viewModel.feed, feed)
+    }
+    
     // MARK: - Helpers
     
     private func makeSUT(file: StaticString = #file, line: UInt = #line) -> (sut: FeedPresenter, view: ViewSpy) {
