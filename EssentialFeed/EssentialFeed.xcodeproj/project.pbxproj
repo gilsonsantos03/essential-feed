@@ -388,8 +388,8 @@
 		4428CED327960195009F9E7B /* EssentialFeediOSTests */ = {
 			isa = PBXGroup;
 			children = (
+				44328F8A282C7C5B00688540 /* FeedUI */,
 				447855CD27EA8EF100F7A7F5 /* Helpers */,
-				447855CB27EA8AC600F7A7F5 /* FeedSnapshotTests.swift */,
 			);
 			path = EssentialFeediOSTests;
 			sourceTree = "<group>";
@@ -448,6 +448,14 @@
 				44AA43232813854D000D756D /* FeedImageDataMapperTests.swift */,
 			);
 			path = FeedAPI;
+			sourceTree = "<group>";
+		};
+		44328F8A282C7C5B00688540 /* FeedUI */ = {
+			isa = PBXGroup;
+			children = (
+				447855CB27EA8AC600F7A7F5 /* FeedSnapshotTests.swift */,
+			);
+			path = FeedUI;
 			sourceTree = "<group>";
 		};
 		4433206E2739E50700991244 /* FeedAPI */ = {
