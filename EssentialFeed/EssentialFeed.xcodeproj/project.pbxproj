@@ -65,7 +65,7 @@
 		44427ED427C46F7A00F9D0CB /* FeedImageDataStoreSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44427ED327C46F7A00F9D0CB /* FeedImageDataStoreSpy.swift */; };
 		44427ED627C4704000F9D0CB /* CacheFeedImageDataUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44427ED527C4704000F9D0CB /* CacheFeedImageDataUseCaseTests.swift */; };
 		44427ED827C471D800F9D0CB /* CoreDataFeedImageDataStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44427ED727C471D800F9D0CB /* CoreDataFeedImageDataStoreTests.swift */; };
-		4445CD6D27C6FEA90013AAD8 /* CoreDataFeedStore+FeedImageDataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4445CD6C27C6FEA90013AAD8 /* CoreDataFeedStore+FeedImageDataLoader.swift */; };
+		4445CD6D27C6FEA90013AAD8 /* CoreDataFeedStore+FeedImageDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4445CD6C27C6FEA90013AAD8 /* CoreDataFeedStore+FeedImageDataStore.swift */; };
 		445A57D727E0241500353CEC /* FeedCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 445A57D627E0241500353CEC /* FeedCache.swift */; };
 		445A57E127E02A7B00353CEC /* FeedImageDataCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 445A57E027E02A7B00353CEC /* FeedImageDataCache.swift */; };
 		446D7FC927C04FB100377094 /* FeedImageDataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4428CEF4279AF597009F9E7B /* FeedImageDataLoader.swift */; };
@@ -227,7 +227,7 @@
 		44427ED527C4704000F9D0CB /* CacheFeedImageDataUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheFeedImageDataUseCaseTests.swift; sourceTree = "<group>"; };
 		44427ED727C471D800F9D0CB /* CoreDataFeedImageDataStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataFeedImageDataStoreTests.swift; sourceTree = "<group>"; };
 		44427ED927C4737500F9D0CB /* FeedStore2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FeedStore2.xcdatamodel; sourceTree = "<group>"; };
-		4445CD6C27C6FEA90013AAD8 /* CoreDataFeedStore+FeedImageDataLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CoreDataFeedStore+FeedImageDataLoader.swift"; sourceTree = "<group>"; };
+		4445CD6C27C6FEA90013AAD8 /* CoreDataFeedStore+FeedImageDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CoreDataFeedStore+FeedImageDataStore.swift"; sourceTree = "<group>"; };
 		445A57D627E0241500353CEC /* FeedCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCache.swift; sourceTree = "<group>"; };
 		445A57E027E02A7B00353CEC /* FeedImageDataCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedImageDataCache.swift; sourceTree = "<group>"; };
 		446D7FD427C07AC400377094 /* HTTPURLReponse+StatusCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HTTPURLReponse+StatusCode.swift"; sourceTree = "<group>"; };
@@ -642,7 +642,7 @@
 				443C7F8D2790C8F1004136B2 /* CoreDataHelpers.swift */,
 				443C7F8F2790C96B004136B2 /* ManagedCache.swift */,
 				443C7F912790C993004136B2 /* ManagedFeedImage.swift */,
-				4445CD6C27C6FEA90013AAD8 /* CoreDataFeedStore+FeedImageDataLoader.swift */,
+				4445CD6C27C6FEA90013AAD8 /* CoreDataFeedStore+FeedImageDataStore.swift */,
 				449ACBF027C99ABE00E2EB67 /* CoreDataFeedStore+FeedStore.swift */,
 			);
 			path = CoreData;
@@ -1082,7 +1082,7 @@
 				44427ED027C467BF00F9D0CB /* FeedImageDataStore.swift in Sources */,
 				443C7F902790C96B004136B2 /* ManagedCache.swift in Sources */,
 				445A57D727E0241500353CEC /* FeedCache.swift in Sources */,
-				4445CD6D27C6FEA90013AAD8 /* CoreDataFeedStore+FeedImageDataLoader.swift in Sources */,
+				4445CD6D27C6FEA90013AAD8 /* CoreDataFeedStore+FeedImageDataStore.swift in Sources */,
 				442B0B64274071960022A3A9 /* FeedItemsMapper.swift in Sources */,
 				44AA432A2815A316000D756D /* LoadResourcePresenter.swift in Sources */,
 				44AA430B28136338000D756D /* ImageCommentsMapper.swift in Sources */,
