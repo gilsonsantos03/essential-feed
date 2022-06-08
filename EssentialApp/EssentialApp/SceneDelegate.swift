@@ -31,19 +31,19 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             return NullStore()
         }
     }()
-
+    
     private lazy var localFeedLoader: LocalFeedLoader = {
         LocalFeedLoader(store: store, currentDate: Date.init)
     }()
     
     private lazy var baseURL = URL(string: "https://ile-api.essentialdeveloper.com/essential-feed")!
-
+    
     private lazy var navigationController = UINavigationController(
         rootViewController: FeedUIComposer.feedComposedWith(
             feedLoader: makeRemoteFeedLoaderWithLocalFallback,
             imageLoader: makeLocalImageLoaderWithRemoteFallback,
             selection: showComments))
-
+    
     convenience init(httpClient: HTTPClient, store: FeedStore & FeedImageDataStore, scheduler: AnyDispatchQueueScheduler) {
         self.init()
         self.httpClient = httpClient
@@ -53,7 +53,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let scene = (scene as? UIWindowScene) else { return }
-    
+        
         window = UIWindow(windowScene: scene)
         configureWindow()
     }
@@ -91,16 +91,20 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             .caching(to: localFeedLoader)
             .fallback(to: localFeedLoader.loadPublisher)
             .map(makeFirstPage)
+            .subscribe(on: scheduler)
             .eraseToAnyPublisher()
     }
-        
+    
     private func makeRemoteLoadMoreLoader(last: FeedImage?) -> AnyPublisher<Paginated<FeedImage>, Error> {
         localFeedLoader.loadPublisher()
             .zip(makeRemoteFeedLoader(after: last))
             .map { (cachedItems, newItems) in
                 (cachedItems + newItems, newItems.last)
-            }.map(makePage)
+            }
+            .map(makePage)
             .caching(to: localFeedLoader)
+            .subscribe(on: scheduler)
+            .eraseToAnyPublisher()
     }
     
     private func makeRemoteFeedLoader(after: FeedImage? = nil) -> AnyPublisher<[FeedImage], Error> {
